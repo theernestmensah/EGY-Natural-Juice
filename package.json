@@ -1,0 +1,22 @@
+{
+  "name": "egy-natural-juice",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@imgly/background-removal-node": "^1.4.5",
+    "sharp": "^0.35.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  },
+  "dependencies": {
+    "@fontsource/anton": "^5.2.7",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@phosphor-icons/core": "^2.1.1"
+  }
+}

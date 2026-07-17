@@ -1,0 +1,124 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+  animation: preloaderCurtainOut 0.55s var(--ease-out) 1.05s forwards;
+}
+
+.preloader__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 145vmax;
+  height: 145vmax;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: preloaderCircleGrow 0.55s var(--ease-out) forwards;
+}
+
+.preloader__circle--mango {
+  background: var(--flavor-mango);
+  animation-delay: 0.02s;
+}
+
+.preloader__circle--berry {
+  background: var(--flavor-berry);
+  animation-delay: 0.12s;
+}
+
+.preloader__circle--passion {
+  background: var(--flavor-passion);
+  animation-delay: 0.22s;
+}
+
+.preloader__circle--base {
+  background: var(--bg);
+  animation-delay: 0.32s;
+}
+
+.preloader__mark {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 8vw, 68px);
+  letter-spacing: 0.02em;
+  color: var(--text);
+  opacity: 0;
+  transform: scale(0.7);
+  animation: preloaderMarkIn 0.4s var(--ease-out) 0.5s forwards, preloaderMarkOut 0.3s var(--ease-out) 0.85s forwards;
+}
+
+@keyframes preloaderCircleGrow {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes preloaderMarkIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes preloaderMarkOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes preloaderCurtainOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+  99% {
+    pointer-events: auto;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+  }
+}
+
+@keyframes headerDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-intro {
+  animation: headerDropIn 0.5s var(--ease-out) 0.95s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    display: none;
+  }
+
+  .header-intro {
+    animation: none;
+  }
+}

@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EGY Natural Juice: small-batch, 100% natural juice pressed from real fruit. No concentrate, no preservatives, no shortcuts." />
+    <meta name="theme-color" content="#14110d" />
+    <title>EGY Natural Juice | Small-Batch, 100% Natural</title>
+  </head>
+  <body>
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <span class="preloader__circle preloader__circle--mango"></span>
+      <span class="preloader__circle preloader__circle--berry"></span>
+      <span class="preloader__circle preloader__circle--passion"></span>
+      <span class="preloader__circle preloader__circle--base"></span>
+      <span class="preloader__mark">EGY</span>
+    </div>
+
+    <header class="site-header header-intro">
+      <div class="container site-header__inner">
+        <a href="#top" class="brand">EGY<span class="brand__sub">Natural Juice</span></a>
+
+        <nav class="site-nav" id="site-nav">
+          <a href="#flavors">Flavors</a>
+          <a href="#why">Our Juice</a>
+          <a href="#bundles">Bundles</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <button class="icon-btn" id="cart-toggle" aria-haspopup="dialog" aria-controls="cart-drawer" aria-label="Open cart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M216,68H180a52,52,0,0,0-104,0H40A16,16,0,0,0,24,84V208a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V84A16,16,0,0,0,216,68ZM128,32a36,36,0,0,1,36,36H92A36,36,0,0,1,128,32Zm88,176H40V84H76v20a8,8,0,0,0,16,0V84h72v20a8,8,0,0,0,16,0V84h36Z"/></svg>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+          <button class="icon-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1>The juice that makes concentrate nervous</h1>
+            <p class="hero__sub">Pressed from real fruit, not powder and promises. Small batches, honest labels, zero shortcuts.</p>
+            <div class="hero__ctas">
+              <a href="#flavors" class="btn btn--primary">Shop Now</a>
+            </div>
+          </div>
+
+          <div class="hero__stage">
+            <div class="hero__switcher" id="hero-switcher" role="tablist" aria-label="Choose a flavor">
+              <button type="button" class="is-active" data-flavor="pinemango" role="tab" aria-selected="true">PineMango</button>
+              <button type="button" data-flavor="watermelon-beetroot" role="tab" aria-selected="false">Watermelon Beetroot</button>
+              <button type="button" data-flavor="passionfruit" role="tab" aria-selected="false">Passion Fruit</button>
+            </div>
+
+            <div class="hero__figure-wrap">
+              <button type="button" class="hero__arrow" id="hero-prev" aria-label="Previous flavor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg>
+              </button>
+
+              <div class="hero__figure" id="hero-figure">
+                <div class="hero__backdrop" id="hero-backdrop"></div>
+                <div class="hero__blob hero__blob--a"></div>
+                <div class="hero__blob hero__blob--b"></div>
+                <div class="hero__bottle-track">
+                  <img class="hero__bottle is-active" src="/products/pinemango.png" alt="EGY PineMango natural juice can" data-flavor="pinemango" />
+                  <img class="hero__bottle" src="/products/watermelon-beetroot.png" alt="EGY Pineapple, Watermelon and Beet Root natural juice can" data-flavor="watermelon-beetroot" />
+                  <img class="hero__bottle" src="/products/passionfruit.png" alt="EGY Pineapple and Passion Fruit natural juice can" data-flavor="passionfruit" />
+                </div>
+              </div>
+
+              <button type="button" class="hero__arrow" id="hero-next" aria-label="Next flavor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLAIMS -->
+      <section class="claims">
+        <div class="container">
+          <div class="claims__grid">
+            <article class="claim claim--big reveal">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5a71.14,71.14,0,0,1-45.34,10.34c19.24-18.5,40.65-45.17,55.85-79a8,8,0,0,0-14.52-6.61c-15.71,34.66-38.36,61.4-57.45,79.11a71.6,71.6,0,0,1-9.85-38.94C84.31,113.06,131.06,68.58,207.29,48.71,215.71,110.94,192.4,166.68,153.75,189.5Z"/></svg>
+              <h3>100% Natural Extracts</h3>
+              <p>Every bottle starts with real pineapple, mango, watermelon or whatever fruit is in season. No concentrate, no flavor powder.</p>
+            </article>
+
+            <article class="claim reveal">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg>
+              <h3>No Preservatives</h3>
+              <p>Nothing keeps it going but the fridge.</p>
+            </article>
+
+            <article class="claim reveal">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.78Z"/></svg>
+              <h3>Small-Batch Pressed</h3>
+              <p>Made in small runs so it never sits around.</p>
+            </article>
+
+            <article class="claim claim--wide reveal">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.84-15.53L66.55,151l40.53-23.41L66.55,105.17,42,111.9a8.24,8.24,0,0,1-2.1.28,8,8,0,0,1-2.11-15.72l24.64-6L56,66.35a8,8,0,0,1,15.44-4.14l7.72,28.8L120,114.16V67.31L98.34,45.66A8,8,0,0,1,109.66,34.34L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.85l40.53-23.41,7.72-28.8A8,8,0,1,1,200,66l-6.46,24.1,24.64,6a8,8,0,0,1-1.9,15.76,8.24,8.24,0,0,1-2.1-.28L189.45,105.17l-40.53,23.42,40.53,23.41,24.63-6.6a8,8,0,0,1,9.69,5.69Z"/></svg>
+              <div class="claim-copy">
+                <h3>Cold-Chain Fresh</h3>
+                <p>Refrigerated or frozen from the moment it's bottled until it reaches you.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLAVOR PRODUCT CARDS -->
+      <section class="flavors" id="flavors">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Choose your juice</h2>
+            <p>Three flagship flavors, pressed the same honest way every time.</p>
+          </div>
+
+          <div class="flavor-cards">
+            <article class="flavor-card reveal" data-product-id="pinemango" data-product-name="PineMango" data-product-price="15.00">
+              <div class="flavor-card__stage" style="--flavor-bg: var(--flavor-mango)">
+                <img src="/products/pinemango.png" alt="EGY PineMango natural juice can" loading="lazy" />
+              </div>
+              <div class="flavor-card__body">
+                <h3 class="flavor-card__name">PineMango</h3>
+                <p class="flavor-card__desc">Bright pineapple up front, ripe mango right behind it.</p>
+                <div class="flavor-card__row">
+                  <span class="flavor-card__price">GH₵15.00</span>
+                  <div class="qty-stepper" data-qty-for="pinemango">
+                    <button type="button" class="qty-minus" aria-label="Decrease quantity">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></svg>
+                    </button>
+                    <span class="qty-stepper__value" data-qty-value>1</span>
+                    <button type="button" class="qty-plus" aria-label="Increase quantity">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary btn--block add-to-cart" style="margin-top:14px">Add to Cart</button>
+              </div>
+            </article>
+
+            <article class="flavor-card reveal" data-product-id="watermelon-beetroot" data-product-name="Pineapple, Watermelon &amp; Beet Root" data-product-price="15.00">
+              <div class="flavor-card__stage" style="--flavor-bg: var(--flavor-berry)">
+                <img src="/products/watermelon-beetroot.png" alt="EGY Pineapple, Watermelon and Beet Root natural juice can" loading="lazy" />
+              </div>
+              <div class="flavor-card__body">
+                <h3 class="flavor-card__name">Watermelon &amp; Beet Root</h3>
+                <p class="flavor-card__desc">A juicy pineapple trio with an earthy backbone.</p>
+                <div class="flavor-card__row">
+                  <span class="flavor-card__price">GH₵15.00</span>
+                  <div class="qty-stepper" data-qty-for="watermelon-beetroot">
+                    <button type="button" class="qty-minus" aria-label="Decrease quantity">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></svg>
+                    </button>
+                    <span class="qty-stepper__value" data-qty-value>1</span>
+                    <button type="button" class="qty-plus" aria-label="Increase quantity">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary btn--block add-to-cart" style="margin-top:14px">Add to Cart</button>
+              </div>
+            </article>
+
+            <article class="flavor-card reveal" data-product-id="passionfruit" data-product-name="Pineapple &amp; Passion Fruit" data-product-price="15.00">
+              <div class="flavor-card__stage" style="--flavor-bg: var(--flavor-passion)">
+                <img src="/products/passionfruit.png" alt="EGY Pineapple and Passion Fruit natural juice can" loading="lazy" />
+              </div>
+              <div class="flavor-card__body">
+                <h3 class="flavor-card__name">Passion Fruit</h3>
+                <p class="flavor-card__desc">Sweet pineapple with a sharp passion fruit finish.</p>
+                <div class="flavor-card__row">
+                  <span class="flavor-card__price">GH₵15.00</span>
+                  <div class="qty-stepper" data-qty-for="passionfruit">
+                    <button type="button" class="qty-minus" aria-label="Decrease quantity">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></svg>
+                    </button>
+                    <span class="qty-stepper__value" data-qty-value>1</span>
+                    <button type="button" class="qty-plus" aria-label="Increase quantity">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary btn--block add-to-cart" style="margin-top:14px">Add to Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- STORY / WHY US -->
+      <section class="story" id="why">
+        <div class="container story__inner">
+          <div class="story__copy reveal">
+            <h2>We press it. We don't fake it.</h2>
+            <p>Every EGY bottle is filled with fruit that was whole yesterday. No syrup, no color additives, no shortcuts hiding behind a fruit-forward label. Just juice that tastes like the fruit it came from.</p>
+            <ul class="story__list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg>
+                <span>Hand-sealed cans, checked one by one</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg>
+                <span>Refrigerated from bottling to delivery</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg>
+                <span>Recipes tuned by taste, not a spreadsheet</span>
+              </li>
+            </ul>
+          </div>
+          <div class="story__visual reveal">
+            <div class="story__visual-blob"></div>
+            <img src="/products/watermelon-beetroot.png" alt="" aria-hidden="true" />
+            <img src="/products/pinemango.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
+      <!-- MORE FLAVORS -->
+      <section class="more-flavors">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>More flavors</h2>
+            <p>Same juice, same fridge. Photos of these three are on the way.</p>
+          </div>
+
+          <div class="more-flavors__grid">
+            <article class="flat-card reveal" style="--flat-a: var(--flavor-ginger); --flat-b: #8f7b1c" data-product-id="ginger" data-product-name="Pineapple &amp; Ginger" data-product-price="15.00">
+              <div>
+                <h3 class="flat-card__name">Pineapple &amp; Ginger</h3>
+                <p class="flat-card__desc">Sweet pineapple with a warm ginger kick.</p>
+              </div>
+              <div class="flat-card__row">
+                <span class="flat-card__price">GH₵15.00</span>
+                <button type="button" class="btn btn--dark btn--sm add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+
+            <article class="flat-card reveal" style="--flat-a: var(--flavor-melon); --flat-b: #4f8f21" data-product-id="melon" data-product-name="Pineapple &amp; Melon" data-product-price="15.00">
+              <div>
+                <h3 class="flat-card__name">Pineapple &amp; Melon</h3>
+                <p class="flat-card__desc">Light, cooling, and easy to drink all day.</p>
+              </div>
+              <div class="flat-card__row">
+                <span class="flat-card__price">GH₵15.00</span>
+                <button type="button" class="btn btn--dark btn--sm add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+
+            <article class="flat-card reveal" style="--flat-a: var(--flavor-mint); --flat-b: #1f6b4a" data-product-id="mint" data-product-name="Pineapple &amp; Mint" data-product-price="15.00">
+              <div>
+                <h3 class="flat-card__name">Pineapple &amp; Mint</h3>
+                <p class="flat-card__desc">Fresh mint finish, best served ice-cold.</p>
+              </div>
+              <div class="flat-card__row">
+                <span class="flat-card__price">GH₵15.00</span>
+                <button type="button" class="btn btn--dark btn--sm add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUNDLE -->
+      <section class="bundle" id="bundles">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Save on a pack</h2>
+            <p>Mix and match flavors. The more you stock up, the more you save.</p>
+          </div>
+
+          <div class="bundle__inner">
+            <article class="pack-card reveal" data-product-id="pack-3" data-product-name="3-Pack Bundle" data-product-price="42.00">
+              <div class="pack-card__top">
+                <h3 class="pack-card__name">3-Pack</h3>
+                <span class="badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.78Z"/></svg>
+                  Any 3 flavors
+                </span>
+              </div>
+              <div class="pack-card__price-row">
+                <span class="pack-card__price">GH₵42.00</span>
+                <span class="pack-card__was">GH₵45.00</span>
+              </div>
+              <p class="pack-card__desc">Pick any three cans from the full lineup. Great for trying flavors you haven't had yet.</p>
+              <button type="button" class="btn btn--ghost btn--block add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="pack-card pack-card--featured reveal" data-product-id="pack-6" data-product-name="6-Pack Bundle" data-product-price="80.00">
+              <div class="pack-card__top">
+                <h3 class="pack-card__name">6-Pack</h3>
+                <span class="badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.78Z"/></svg>
+                  Any 6 flavors
+                </span>
+              </div>
+              <div class="pack-card__price-row">
+                <span class="pack-card__price">GH₵80.00</span>
+                <span class="pack-card__was">GH₵90.00</span>
+              </div>
+              <p class="pack-card__desc">A full week of juice. The best value per can, and enough to share.</p>
+              <button type="button" class="btn btn--primary btn--block add-to-cart">Add to Cart</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section class="reviews">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>What people are saying</h2>
+            <p>Sample reviews for now. Real customer feedback goes here once EGY is live online.</p>
+          </div>
+        </div>
+
+        <div class="reviews__row reveal">
+          <article class="review-card">
+            <div class="review-card__stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+            </div>
+            <p class="review-card__quote">This actually tastes like fruit, not sugar water. My kids can't get enough of the PineMango.</p>
+            <span class="review-card__name">Ama K., Accra</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Z"/></svg>
+            </div>
+            <p class="review-card__quote">Cold, thick, real. The watermelon and beet root one is unlike anything else I've had.</p>
+            <span class="review-card__name">Kwesi A., Tema</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+            </div>
+            <p class="review-card__quote">I keep a case in my fridge at all times now. Passion fruit is my favorite by far.</p>
+            <span class="review-card__name">Nana Y., Kumasi</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+            </div>
+            <p class="review-card__quote">Finally a juice brand that doesn't taste like it came from a powder packet.</p>
+            <span class="review-card__name">Efua B., Accra</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Z"/></svg>
+            </div>
+            <p class="review-card__quote">Great for smoothies too. I blend it with yogurt most mornings before work.</p>
+            <span class="review-card__name">Kojo T., Takoradi</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" id="faq">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Questions</h2>
+          </div>
+
+          <div class="faq__list reveal">
+            <details class="faq-item">
+              <summary>
+                Do I need to keep it refrigerated?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+              </summary>
+              <p>Yes. Every bottle is cold-pressed with no preservatives, so it needs to stay refrigerated (or frozen for some batches) until you're ready to drink it.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                What's actually in the juice?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+              </summary>
+              <p>Real fruit, water where needed, and nothing else. Check the label on each can for the exact mix of that flavor.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Do you deliver outside Accra?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+              </summary>
+              <p>Online ordering is on its way. For now, call or message us directly and we'll sort out delivery.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Can I order in bulk for an event?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+              </summary>
+              <p>Yes, reach out and we'll put together a bundle for your event or office.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#top" class="brand">EGY<span class="brand__sub">Natural Juice</span></a>
+            <p>Small-batch natural juice, pressed fresh and kept honest. No concentrate, no shortcuts.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="EGY Natural Juice on Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg>
+              </a>
+              <a href="#" aria-label="EGY Natural Juice on Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"/></svg>
+              </a>
+              <a href="#" aria-label="EGY Natural Juice on TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,47.64a87.19,87.19,0,0,1-43.33-16.15,8,8,0,0,0-12.67,6.51v46l0,.36q0,.5,0,1A44,44,0,1,1,116,127.68a8,8,0,0,0,8-8V32h16.81A64.14,64.14,0,0,0,216,87.19Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Shop</h3>
+            <ul class="footer-links">
+              <li><a href="#flavors">Flavors</a></li>
+              <li><a href="#bundles">Bundles</a></li>
+              <li><a href="#why">Our Juice</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Help</h3>
+            <ul class="footer-links">
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#top">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-heading">Get in touch</h3>
+            <div class="footer-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47.15L83.15,111.94a8.44,8.44,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.77-.58l24.63-20.94,47.15,21.05h0a.61.61,0,0,0,.12,0A40.2,40.2,0,0,1,176,208Z"/></svg>
+              <span>024 946 2636</span>
+            </div>
+            <form class="newsletter-form" id="newsletter-form">
+              <label for="newsletter-email" class="visually-hidden">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Your email" required autocomplete="email" />
+              <button type="submit" class="btn btn--primary btn--sm">Join</button>
+            </form>
+            <p class="newsletter-note" id="newsletter-note"></p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 EGY Natural Juice. All rights reserved.</span>
+          <span>Accra, Ghana</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+      <div class="cart-drawer__header">
+        <h2>Your Cart</h2>
+        <button type="button" class="icon-btn" id="cart-close" aria-label="Close cart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+        </button>
+      </div>
+      <div class="cart-drawer__items" id="cart-items">
+        <div class="cart-empty" id="cart-empty">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" class="icon"><path d="M216,68H180a52,52,0,0,0-104,0H40A16,16,0,0,0,24,84V208a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V84A16,16,0,0,0,216,68ZM128,32a36,36,0,0,1,36,36H92A36,36,0,0,1,128,32Zm88,176H40V84H76v20a8,8,0,0,0,16,0V84h72v20a8,8,0,0,0,16,0V84h36Z"/></svg>
+          <span>Your cart is empty</span>
+          <button type="button" class="btn btn--ghost btn--sm" id="cart-empty-shop">Shop Now</button>
+        </div>
+      </div>
+      <div class="cart-drawer__footer">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal-value">GH₵0.00</strong>
+        </div>
+        <button type="button" class="btn btn--primary btn--block" id="cart-checkout">Checkout</button>
+        <p class="cart-checkout-note" id="cart-checkout-note"></p>
+      </div>
+    </aside>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
