@@ -109,17 +109,49 @@ function initHero() {
     });
   }
 
+  const AUTO_ADVANCE_MS = 3000;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let autoTimer: number | undefined;
+
+  function stopAuto() {
+    if (autoTimer !== undefined) {
+      window.clearInterval(autoTimer);
+      autoTimer = undefined;
+    }
+  }
+
+  function startAuto() {
+    if (reduceMotion) return;
+    stopAuto();
+    autoTimer = window.setInterval(() => {
+      applyFlavor(activeIndex + 1, 1);
+    }, AUTO_ADVANCE_MS);
+  }
+
+  function onManualChange(index: number, direction: 1 | -1) {
+    applyFlavor(index, direction);
+    startAuto();
+  }
+
   switcher.querySelectorAll<HTMLButtonElement>("button").forEach((btn, i) => {
     btn.addEventListener("click", () => {
       const direction = i >= activeIndex ? 1 : -1;
-      applyFlavor(i, direction);
+      onManualChange(i, direction);
     });
   });
 
-  prevBtn.addEventListener("click", () => applyFlavor(activeIndex - 1, -1));
-  nextBtn.addEventListener("click", () => applyFlavor(activeIndex + 1, 1));
+  prevBtn.addEventListener("click", () => onManualChange(activeIndex - 1, -1));
+  nextBtn.addEventListener("click", () => onManualChange(activeIndex + 1, 1));
+
+  heroSection.addEventListener("mouseenter", stopAuto);
+  heroSection.addEventListener("mouseleave", startAuto);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAuto();
+    else startAuto();
+  });
 
   applyFlavor(0, 1, true);
+  startAuto();
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -318,6 +350,24 @@ function initCart() {
   renderCart();
 }
 
+/* ---------- Reviews marquee ---------- */
+function initReviewsMarquee() {
+  const row = document.querySelector<HTMLElement>(".reviews__row");
+  if (!row) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return; // keep the plain manual-scroll row for these users
+
+  const originalCards = Array.from(row.children);
+  originalCards.forEach((card) => {
+    const clone = card.cloneNode(true) as HTMLElement;
+    clone.setAttribute("aria-hidden", "true");
+    row.appendChild(clone);
+  });
+
+  row.classList.add("reviews__row--auto");
+}
+
 /* ---------- Newsletter (front-end only) ---------- */
 function initNewsletter() {
   const form = document.getElementById("newsletter-form") as HTMLFormElement | null;
@@ -337,4 +387,5 @@ initHero();
 initReveal();
 initQtySteppers();
 initCart();
+initReviewsMarquee();
 initNewsletter();
