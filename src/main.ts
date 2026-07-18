@@ -66,10 +66,14 @@ function initHero() {
   const nextBtn = document.getElementById("hero-next");
   if (!heroSection || !switcher || !prevBtn || !nextBtn) return;
 
-  let activeIndex = 0;
+  let activeIndex = -1;
 
-  function applyFlavor(index: number) {
-    activeIndex = (index + FLAVORS.length) % FLAVORS.length;
+  function applyFlavor(index: number, direction: 1 | -1 = 1, immediate = false) {
+    const nextIndex = (index + FLAVORS.length) % FLAVORS.length;
+    if (nextIndex === activeIndex) return;
+
+    const outgoing = activeIndex >= 0 ? FLAVORS[activeIndex] : null;
+    activeIndex = nextIndex;
     const flavor = FLAVORS[activeIndex];
 
     heroSection!.style.setProperty("--flavor-accent", `var(${flavor.accentVar})`);
@@ -81,18 +85,41 @@ function initHero() {
     });
 
     document.querySelectorAll<HTMLImageElement>(".hero__bottle").forEach((img) => {
-      img.classList.toggle("is-active", img.dataset.flavor === flavor.id);
+      if (img.dataset.flavor === flavor.id) {
+        // Incoming bottle enters from the side of whichever arrow was pressed.
+        img.style.setProperty("--enter-x", `${direction * 55}%`);
+        img.classList.remove("is-active");
+
+        if (immediate) {
+          img.style.transition = "none";
+          img.classList.add("is-active");
+          void img.offsetWidth;
+          img.style.transition = "";
+        } else {
+          void img.offsetWidth; // commit the starting position before animating in
+          img.classList.add("is-active");
+        }
+      } else if (outgoing && img.dataset.flavor === outgoing.id) {
+        // Outgoing bottle exits toward the opposite side.
+        img.style.setProperty("--enter-x", `${direction * -55}%`);
+        img.classList.remove("is-active");
+      } else {
+        img.classList.remove("is-active");
+      }
     });
   }
 
   switcher.querySelectorAll<HTMLButtonElement>("button").forEach((btn, i) => {
-    btn.addEventListener("click", () => applyFlavor(i));
+    btn.addEventListener("click", () => {
+      const direction = i >= activeIndex ? 1 : -1;
+      applyFlavor(i, direction);
+    });
   });
 
-  prevBtn.addEventListener("click", () => applyFlavor(activeIndex - 1));
-  nextBtn.addEventListener("click", () => applyFlavor(activeIndex + 1));
+  prevBtn.addEventListener("click", () => applyFlavor(activeIndex - 1, -1));
+  nextBtn.addEventListener("click", () => applyFlavor(activeIndex + 1, 1));
 
-  applyFlavor(0);
+  applyFlavor(0, 1, true);
 }
 
 /* ---------- Scroll reveal ---------- */
